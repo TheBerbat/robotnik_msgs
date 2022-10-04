@@ -5,10 +5,17 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    image: europe-southwest1-docker.pkg.dev/robotnik-5830-dev/ci-cd-experimental/package_builder:melodic
-    credentials:
-      username: ${{ secrets.GH_PASSWORD }}
-      password: ${{ secrets.GH_USERNAME }}
+    services:
+      robotnik_ci:
+        image: europe-southwest1-docker.pkg.dev/robotnik-5830-dev/ci-cd-experimental/package_builder:melodic
+        credentials:
+          username: ${{ secrets.GH_PASSWORD }}
+          password: ${{ secrets.GH_USERNAME }}
+    container:
+      image: europe-southwest1-docker.pkg.dev/robotnik-5830-dev/ci-cd-experimental/package_builder:melodic
+      credentials:
+        username: ${{ secrets.GH_PASSWORD }}
+        password: ${{ secrets.GH_USERNAME }}
     steps:
       - name: Hello
         run: |
