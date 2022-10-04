@@ -8,5 +8,7 @@ jobs:
     credentials:
       username: ${{ secrets.GH_PASSWORD }}
       password: ${{ secrets.GH_USERNAME }}
-
+    steps:
+      - name: |
+          echo "Hello World!"
     
