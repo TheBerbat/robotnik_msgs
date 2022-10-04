@@ -14,8 +14,8 @@ jobs:
     container:
       image: europe-southwest1-docker.pkg.dev/robotnik-5830-dev/ci-cd-experimental/package_builder:melodic
       credentials:
-        username: ${{ secrets.GH_PASSWORD2 }}
-        password: ${{ secrets.GH_USERNAME }}
+        username: ${{ secrets.GH_USERNAME}}
+        password: ${{ secrets.GH_PASSWORD }}
     steps:
     - run: echo secret!
 
