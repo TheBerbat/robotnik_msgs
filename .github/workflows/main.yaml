@@ -5,12 +5,6 @@ on: push
 jobs:
   private:
     runs-on: ubuntu-latest
-    services:
-      robotnik_ci: 
-        image: europe-southwest1-docker.pkg.dev/robotnik-5830-dev/ci-cd-experimental/package_builder:melodic
-        credentials:
-          username: ${{ secrets.GH_PASSWORD }}
-          password: ${{ secrets.GH_USERNAME }}
     container:
       image: europe-southwest1-docker.pkg.dev/robotnik-5830-dev/ci-cd-experimental/package_builder:melodic
       credentials:
