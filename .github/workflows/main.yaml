@@ -11,9 +11,23 @@ jobs:
         username: ${{ secrets.GH_USERNAME }}
         password: ${{ secrets.GH_PASSWORD }}
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
       with:
         path: 'catkin_ws/src/'
+
+    - name: Download dependencies
+      run: |
+        source /opt/ros/melodic/setup.bash
+        sudo apt-get update
+        sudo rosdep init
+        rosdep update
+        rosdep install --from-paths catkin_ws/src --ignore-src -r -y
+
+    - name: Compile
+      run: |
+        cd catkin_ws/
+        catkin build
 
 
     
