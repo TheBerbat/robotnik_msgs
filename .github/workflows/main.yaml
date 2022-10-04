@@ -26,8 +26,21 @@ jobs:
 
     - name: Compile
       run: |
+        . /opt/ros/melodic/setup.sh
         cd catkin_ws/
         catkin build
 
+    - name: Generate DEB
+      run: |
+        . /opt/ros/melodic/setup.sh
+        cd catkin_ws/
+        generate_debs
+
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: debs
+        path: catkin_ws/debs/
+        
 
     
