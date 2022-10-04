@@ -18,7 +18,7 @@ jobs:
 
     - name: Download dependencies
       run: |
-        source /opt/ros/melodic/setup.bash
+        . /opt/ros/melodic/setup.sh
         sudo apt-get update
         sudo rosdep init
         rosdep update
