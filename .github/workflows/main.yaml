@@ -57,6 +57,6 @@ jobs:
       uses: 'google-github-actions/upload-cloud-storage@v0.10.2'
       with:
         path: 'catkin_ws/debs'
-        destination: 'quickstart-apt-repo' 
+        destination: 'sonic-progress-363210/europe-southwest1/quickstart-apt-repo' 
 
     
